@@ -1,6 +1,11 @@
-import unittest, sys, io
+import io
+import random
+import sys
+import unittest
 from contextlib import redirect_stdout
+
 from functions import *
+
 
 class TestFunctions(unittest.TestCase):
 
