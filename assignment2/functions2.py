@@ -37,8 +37,11 @@ def repeat_word(a_string, num_rows, num_col):
 
 
 def text_triangle(int6):
-    for i in range(int6):
-        print('x' * (i + 1))
+    if int6 > 0:
+        for i in range(int6):
+            print('X' * (i+1))
+    else:
+            print()
 
 
 def surface_area_of_cylinder(radius, height):
@@ -72,7 +75,6 @@ def main():
     surface_area_of_cylinder(0.0, 1.0)
     tree_height(300, 500)
     tree_height(100, 141.421356)
-
 
 
 if __name__ == '__main__':
