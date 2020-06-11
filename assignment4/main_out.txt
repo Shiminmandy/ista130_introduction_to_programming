@@ -9,20 +9,24 @@ Enter name for player 1:Enter name for player 2:	Hello Ziggy and Elmer, welcome 
 	Points: 5
 Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 1 >>>
 	!!! PIG! No points earned, sorry Ziggy !!!
-(enter to continue)---------- Ziggy's turn ----------
-	<<< Ziggy rolls a 6 >>>
-	Points: 6
-Roll again, Ziggy? (Y/N) I don't understand: "Yes". Please enter either "Y" or "N".
-Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 2 >>>
-	Points: 8
-Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 6 >>>
-	Points: 14
-Roll again, Ziggy? (Y/N) 
---- SCORES	Ziggy: 14	Elmer: 0 ---
+(enter to continue)
+--- SCORES	Ziggy: 0	Elmer: 0 ---
 ---------- Elmer's turn ----------
-	<<< Elmer rolls a 3 >>>
+	<<< Elmer rolls a 6 >>>
+	Points: 6
+Roll again, Elmer? (Y/N) I don't understand: "Yes". Please enter either "Y" or "N".
+Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 2 >>>
+	Points: 8
+Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 6 >>>
+	Points: 14
+Roll again, Elmer? (Y/N) 
+--- SCORES	Ziggy: 0	Elmer: 14 ---
+---------- Ziggy's turn ----------
+	<<< Ziggy rolls a 3 >>>
 	Points: 3
-Roll again, Elmer? (Y/N) ---------- Elmer's turn ----------
+Roll again, Ziggy? (Y/N) 
+--- SCORES	Ziggy: 3	Elmer: 14 ---
+---------- Elmer's turn ----------
 	<<< Elmer rolls a 5 >>>
 	Points: 5
 Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 2 >>>
@@ -32,47 +36,51 @@ Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 3 >>>
 Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 5 >>>
 	Points: 15
 Roll again, Elmer? (Y/N) 
---- SCORES	Ziggy: 14	Elmer: 15 ---
-
---- SCORES	Ziggy: 0	Elmer: 0 ---
+--- SCORES	Ziggy: 3	Elmer: 29 ---
 ---------- Ziggy's turn ----------
 	<<< Ziggy rolls a 3 >>>
 	Points: 3
-Roll again, Ziggy? (Y/N) ---------- Ziggy's turn ----------
-	<<< Ziggy rolls a 4 >>>
-	Points: 4
-Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 6 >>>
-	Points: 10
 Roll again, Ziggy? (Y/N) 
---- SCORES	Ziggy: 10	Elmer: 0 ---
+--- SCORES	Ziggy: 6	Elmer: 29 ---
 ---------- Elmer's turn ----------
 	<<< Elmer rolls a 4 >>>
 	Points: 4
-Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 5 >>>
+Roll again, Elmer? (Y/N) 	<<< Elmer rolls a 6 >>>
+	Points: 10
+Roll again, Elmer? (Y/N) 
+--- SCORES	Ziggy: 6	Elmer: 39 ---
+---------- Ziggy's turn ----------
+	<<< Ziggy rolls a 4 >>>
+	Points: 4
+Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 5 >>>
 	Points: 9
-Roll again, Elmer? (Y/N) I don't understand: "". Please enter either "Y" or "N".
-Roll again, Elmer? (Y/N) I don't understand: "". Please enter either "Y" or "N".
-Roll again, Elmer? (Y/N) ---------- Elmer's turn ----------
+Roll again, Ziggy? (Y/N) I don't understand: "". Please enter either "Y" or "N".
+Roll again, Ziggy? (Y/N) I don't understand: "". Please enter either "Y" or "N".
+Roll again, Ziggy? (Y/N) 
+--- SCORES	Ziggy: 15	Elmer: 39 ---
+---------- Elmer's turn ----------
 	<<< Elmer rolls a 1 >>>
 	!!! PIG! No points earned, sorry Elmer !!!
 (enter to continue)
---- SCORES	Ziggy: 10	Elmer: 0 ---
-
---- SCORES	Ziggy: 0	Elmer: 0 ---
+--- SCORES	Ziggy: 15	Elmer: 39 ---
 ---------- Ziggy's turn ----------
 	<<< Ziggy rolls a 6 >>>
 	Points: 6
 Roll again, Ziggy? (Y/N) 	<<< Ziggy rolls a 4 >>>
 	Points: 10
-Roll again, Ziggy? (Y/N) ---------- Ziggy's turn ----------
-	<<< Ziggy rolls a 3 >>>
-	Points: 3
 Roll again, Ziggy? (Y/N) 
---- SCORES	Ziggy: 3	Elmer: 0 ---
+--- SCORES	Ziggy: 25	Elmer: 39 ---
 ---------- Elmer's turn ----------
-	<<< Elmer rolls a 6 >>>
+	<<< Elmer rolls a 3 >>>
+	Points: 3
+Roll again, Elmer? (Y/N) 
+--- SCORES	Ziggy: 25	Elmer: 42 ---
+---------- Ziggy's turn ----------
+	<<< Ziggy rolls a 6 >>>
 	Points: 6
-Roll again, Elmer? (Y/N) ---------- Elmer's turn ----------
+Roll again, Ziggy? (Y/N) 
+--- SCORES	Ziggy: 31	Elmer: 42 ---
+---------- Elmer's turn ----------
 	<<< Elmer rolls a 1 >>>
 	!!! PIG! No points earned, sorry Elmer !!!
 (enter to continue)

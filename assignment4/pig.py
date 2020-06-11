@@ -72,22 +72,21 @@ def main():
     name1 = input("Enter name for player 1:")
     name2 = input("Enter name for player 2:")
     print(f"\tHello {name1} and {name2}, welcome to Pig Dice!")
-
+    points = 0
+    points2 = 0
     # check_for_winner('Ziggy', 50)
     # roll_again('ziggy')
     while True:
-        print_scores(name1, 0, name2, 0)
-        play_turn(name1)
-        points = play_turn(name1)
-        print_scores(name1, points, name2, 0)
-        check_for_winner(name1, points)
-        if check_for_winner(name1, points) is True:
-            break
-
-        play_turn(name2)
-        points2 = play_turn(name2)
         print_scores(name1, points, name2, points2)
-        check_for_winner(name2, points2)
+
+        points += play_turn(name1)
+
+        if check_for_winner(name1, points):
+            break
+        print_scores(name1, points, name2, points2)
+        points2 += play_turn(name2)
+        if check_for_winner(name2, points2):
+            break
 
 
 
