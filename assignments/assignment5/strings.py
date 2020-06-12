@@ -52,10 +52,22 @@ def redact_file(fname):
         # print(line)
     fp.close()
     fp_out.close()
+
+
+def plagiarism(file1, file2):
+    f = open(file1, 'r')
+    for line1 in f:
+        f2 = open(file2)
+        for line2 in f2:
+            if line1 == line2:
+                return True
+    else:
+        return False
 def main():
     US_to_EU('3/13/18')
     is_phone_num('123-456-7890b')
     redact_line('123-456-7890 123-456-78901 123-456-7890\n')
     redact_file("redact_in.txt")
+    plagiarism('highlight_in.txt', 'redact_in.txt')
 if __name__ == '__main__':
     main()
