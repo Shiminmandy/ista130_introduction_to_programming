@@ -60,14 +60,31 @@ def plagiarism(file1, file2):
         f2 = open(file2)
         for line2 in f2:
             if line1 == line2:
+                f2.close()
+                f.close()
                 return True
     else:
+        f2.close()
+        f.close()
         return False
+
+
+def count_word(filename, keyword):
+    cfile = open(filename, 'r')
+    num_keyword = 0
+    for line in cfile:
+        x = line.count(keyword)
+        num_keyword += x
+    cfile.close()
+    return num_keyword
+
+
 def main():
     US_to_EU('3/13/18')
     is_phone_num('123-456-7890b')
     redact_line('123-456-7890 123-456-78901 123-456-7890\n')
     redact_file("redact_in.txt")
-    plagiarism('highlight_in.txt', 'redact_in.txt')
+    plagiarism('highlight_in.txt', 'plagiarism_in.txt')
+    count_word('highlight_in.txt', 'Rocket')
 if __name__ == '__main__':
     main()
