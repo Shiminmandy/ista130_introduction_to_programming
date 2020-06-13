@@ -13,6 +13,8 @@ def print_report(filename):
     vowels = 'aeiouAEIOU'
     consonants = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'
     whitespace = " \t\n"
+    x = ["Vowels:", "Consonants:", "Whitespace:", "Punctuation:", "Total:"]
+    y = ["Percent vowels:", "Percent consonants:", "Percent spaces:", "Percent punctuation:"]
     # for line in readfile:
     #     for i in range(len(vowels)):
     #          a = line.count(vowels[i])
@@ -28,17 +30,20 @@ def print_report(filename):
                 whitespace_count += 1
             else:
                 punctuaton_count += 1
-    print("tortoise.txt".center(25, "-"))
-    print(f"Vowels:{vowel_count}")
-    print(f"Consonants:{consonants_count}")
-    print(f"Whitespace:{whitespace_count}")
-    print(f"Punctuation:{punctuaton_count}")
+    readfile.close()
+    print("\n"+filename.center(25, "-"))
+    print(f"{x[0].ljust(20)}{str(vowel_count).rjust(5)}")
+    print(f"{x[1].ljust(20)}{str(consonants_count).rjust(5)}")
+    print(f"{x[2].ljust(20)}{str(whitespace_count).rjust(5)}")
+    print(f"{x[3].ljust(20)}{str(punctuaton_count).rjust(5)}")
     print("-" * 25)
-    print(f"Total:{vowel_count + consonants_count + whitespace_count +punctuaton_count}")
-
-
-
-
+    total = vowel_count + consonants_count + whitespace_count + punctuaton_count
+    print(f"{x[4].ljust(20)}{str(total).rjust(5)}")
+    print(f"\n{y[0].ljust(20)}{str(round(vowel_count/total * 100, 1)).rjust(5)}")
+    print(f"{y[1].ljust(20)}{str(round(consonants_count/total * 100, 1)).rjust(5)}")
+    print(f"{y[2].ljust(20)}{str(round(whitespace_count/total * 100, 1)).rjust(5)}")
+    print(f"{y[3].ljust(20)}{str(round(punctuaton_count/total * 100, 1)).rjust(5)}")
+    print("=" * 25)
     # for j in range(len(consonants)):
     #     c = line.count(consonants[j])
     #     consonants_count += c
