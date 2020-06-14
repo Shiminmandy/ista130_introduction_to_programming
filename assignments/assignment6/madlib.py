@@ -48,9 +48,32 @@ def print_report(filename):
     #     c = line.count(consonants[j])
     #     consonants_count += c
     # print(consonants_count)
+"""
+输入指定行、需要被替换的单词；
+找到被指定单词出现的次数，对次数进行循环；每进行一次循环就用replace()替换一个单词并进行更新
+
+"""
+
+def replace_parts_of_speech(line_from_A_file, replace_part):
+    count_word = line_from_A_file.count(replace_part)
+    for i in range(count_word):
+        user_input = input(f"Enter {replace_part.lower()}: ")
+        line_from_A_file = line_from_A_file.replace(replace_part,user_input,1)
+    return line_from_A_file
+    # no_punctuation = line_from_A_file.replace('.',' ')
+    # splited = no_punctuation.split()
+    # for i in range(len(splited)):
+    #     if replace_part in splited[i]:
+    #         splited[i] = input(f"Enter {replace_part.lower()}: ")
+    #         join_line = " ".join(splited)
+    #         new_line = str(join_line)+'.'
+    # return new_line
+
+
 
 
 def main():
     print_report('tortoise.txt')
+    replace_parts_of_speech("the NOUN VERB PAST the NOUN", "VERB")
 if __name__ == '__main__':
     main()

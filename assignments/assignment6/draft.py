@@ -4,12 +4,42 @@
 # @Copyright
 # @Version:0.0.1
 
-f = open('tortoise.txt', 'r')
-vowel_count = 0
-vowels = 'aeiou'
-vowels += vowels.upper()
-i = 0
-for line in f:
+a = "the noun verb past the noun."
+b = "noun"
 
 
-    print(len(line))
+
+count_b = a.count(b)
+for i in range(count_b):
+    user_input = input("Enter:")
+    a =a.replace(b,user_input,1)
+
+print(a)
+
+
+
+
+
+#d = input("input:")
+# lst =[""]
+# for i in range(len(a)):
+#     if a[i:i+4] == b:
+#
+#         c = a.replace(a[i:i+4],input("input:"))
+#
+#         print(c)
+
+
+
+"""d = a.replace(".", " ")
+c = d.split()
+for i in range(len(c)):
+
+    if c[i] == b:
+        c[i] = input("enter:")
+        e = " ".join(c)
+        f = str(e)+'.'
+print(f)
+"""
+
+
