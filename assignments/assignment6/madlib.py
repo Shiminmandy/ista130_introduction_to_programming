@@ -102,8 +102,8 @@ def complete_mad_lib(templete_file):
 
 
 def main():
-    print_report('tortoise.txt')
-    replace_parts_of_speech("the NOUN VERB PAST the NOUN", "VERB")
-    complete_mad_lib('tortoise.txt')
+    name_templatefile = input(f"Enter file name: ")
+    print_report(name_templatefile)
+    complete_mad_lib(name_templatefile)
 if __name__ == '__main__':
     main()
