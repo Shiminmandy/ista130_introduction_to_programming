@@ -49,8 +49,12 @@ def print_report(filename):
     #     consonants_count += c
     # print(consonants_count)
 """
-输入指定行、需要被替换的单词；
-找到被指定单词出现的次数，对次数进行循环；每进行一次循环就用replace()替换一个单词并进行更新
+
+1：count被指定单词出现的次数
+2：对次数进行循环
+    2.1：用input()让用户输入替换词
+    2.2：每进行一次循环就用replace()替换一个单词并进行更新
+3.返回更新后指定行
 
 """
 
@@ -68,12 +72,38 @@ def replace_parts_of_speech(line_from_A_file, replace_part):
     #         join_line = " ".join(splited)
     #         new_line = str(join_line)+'.'
     # return new_line
+"""
+1. 打开指定文件设定“读”模式
+2.改名
+3.打开改名后文件设定“写”模式
+4.设定一个list，包含需要被替换的类型
+5.循环list里面每一个元素
+    5.1在循环list时同时循环被打开文件里的每一行
+        5.11循环列表里的元素和循环行里面的内容成为replace_parts_of_speech()方程里面的input，将文件里的内容替换成用户指定单词
+6.循环结束后原文件内容已改变，再次读取改变后文件的每一行
+    6.1用 .write()模式将每一行内容导入被改名后新创建的文件中
+7.循环后所有内容传入新文件夹，关上原文件夹
+8.关上新文件夹
 
+"""
+def complete_mad_lib(templete_file):
+    openfile = open(templete_file, 'r')
+    newfile = 'MAD_'+ templete_file
+    newfile_out = open(newfile, 'w')
+    replace_part = ['PLURAL NOUN', 'VERB PAST', 'VERB', 'NOUN', 'ADJECTIVE']
+    for i in range(len(replace_part)):
+        for line in openfile:
+            replace_parts_of_speech(line, replace_part[i])
 
+    for line in openfile:
+        newfile_out.write(line)
+    openfile.close()
+    newfile_out.close()
 
 
 def main():
     print_report('tortoise.txt')
     replace_parts_of_speech("the NOUN VERB PAST the NOUN", "VERB")
+    complete_mad_lib('tortoise.txt')
 if __name__ == '__main__':
     main()

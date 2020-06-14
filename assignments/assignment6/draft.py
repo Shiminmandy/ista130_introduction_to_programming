@@ -6,15 +6,16 @@
 
 a = "the noun verb past the noun."
 b = "noun"
+replace_part = ['PLURAL NOUN', 'VERB PAST', 'VERB', 'NOUN', 'ADJECTIVE']
+for i in range(len(replace_part)):
+    print(replace_part[i])
 
-
-
-count_b = a.count(b)
-for i in range(count_b):
-    user_input = input("Enter:")
-    a =a.replace(b,user_input,1)
-
-print(a)
+# count_b = a.count(b)
+# for i in range(count_b):
+#     user_input = input("Enter:")
+#     a =a.replace(b,user_input,1)
+#
+# print(a)
 
 
 
