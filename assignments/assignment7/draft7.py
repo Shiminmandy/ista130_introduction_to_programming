@@ -3,7 +3,7 @@
 # @Author: Shimin
 # @Copyright
 # @Version:0.0.1
-lst = []
+lst = ['apple banana orange']
 #for i in range(len(lst)):
 #for i in lst:
-print(lst.index(1))
+print(lst[1])
