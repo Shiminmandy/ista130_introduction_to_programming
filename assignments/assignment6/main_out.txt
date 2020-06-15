@@ -12,4 +12,4 @@ Percent consonants:  47.7
 Percent spaces:      19.4
 Percent punctuation:  2.8
 =========================
-Enter plural noun: Enter verb past: Enter noun: Enter adjective: Enter adjective: Enter adjective: Enter verb: Enter noun: Enter verb: Enter verb: Enter noun: Enter verb past: Enter noun: Enter noun: Enter verb past: Enter noun: Enter adjective: Enter adjective: Enter noun: Enter noun: Enter verb: Enter noun: 
+Enter plural noun: 
