@@ -91,16 +91,62 @@ def write_converted_csv(filename, lst_names,BodyWeights ,BrainWeights):
     # writeCSV.writerows(lst_body)
     # writeCSV.writerows(lst_brain)
     # new_file.close()
-
-
+"""
+1.设定三个空列表：动物名，体重，脑重
+2.input三个列表到方程populat_lists(),得到三个从文件中提取的新列表
+3. 设定answer = 'q'
+4. 定while循环，如果answer不为q
+    4.1用户输入动物名
+    4.2如果输入动物名不在列表中
+        4.21打印没有这个名字
+        4.22询问是否在三个列表中加入
+            4.221如果是则按字母表顺序加入动物名
+            4.222第一个函数找到位置
+            4.223在同一位置输入体重
+            4.224同一位置输入脑重
+        4.23如果不是重新输入动物名
+    4.3如果动物名在列表中，
+        4.31 第一个函数提取动物名的体重和脑重
+        4.32打印动物名所在列表的三个值
+        4.33询问是否从列表中删除数据
+            4.331如果是，则依次删除输入动物名在列表中的数据
+5.如果answer==q
+    5.1直接将提取出的三个列表写进另一个新的文件夹中
+    
+"""
 
 
 def main():
-    populate_lists([],[],[])
-    write_converted_csv('whatever.csv', ['apple', 'banana', 'orange'], [10, 20, 30], [1.2, 2.3, 4.5])
-    # answer = 'q'
-    # while not answer =='q' or answer == 'Q':
-    #     answer = input(f'Enter animal name (or "q" to quit) : ').title()
+    names = []
+    body_weights = []
+    brain_weights = []
+    populate_lists(names, body_weights, brain_weights)
+    # write_converted_csv('whatever.csv', ['apple', 'banana', 'orange'], [10, 20, 30], [1.2, 2.3, 4.5])
+    answer = 'q'
+    while True:
+        answer = input(f'Enter animal name (or "q" to quit) : ').title()
+        if answer == 'q' or answer == 'Q':
+            write_converted_csv('BrainBodyWeightPounds.csv', names, body_weights, brain_weights)
+            break
+        else:
+
+            if answer not in names:
+                print(f'File does not contain "{answer}".')
+                ask = input(f'Add "{answer}" to file? (y|n) ')
+                if ask == 'y' or ask == 'Y':
+                    # names.append(answer)
+                    # names.sort()
+                    position = find_insert_position(answer, names)
+                    body_weights = body_weights.insert(position, input(f'Enter body weight for "{answer}" in kilograms: '))
+                    brain_weights = brain_weights.insert(position, input(f'Enter brain weight for "{answer}" in grams: '))
+            elif answer in names:
+                index = find_insert_position(answer, names)
+                print(f"{answer}: body = {body_weights[index]}, {brain_weights[index]}")
+                del_or_not = input(f'Delete "{answer}"? (y|n) ')
+                if del_or_not == 'y' or del_or_not == 'Y':
+                    del names[index]
+                    del body_weights[index]
+                    del brain_weights[index]
 
 
 if __name__ == '__main__':
