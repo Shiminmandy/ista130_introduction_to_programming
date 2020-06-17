@@ -124,7 +124,7 @@ def main():
     # write_converted_csv('whatever.csv', ['apple', 'banana', 'orange'], [10, 20, 30], [1.2, 2.3, 4.5])
     answer = 'q'
     while True:
-        answer = input(f'Enter animal name (or "q" to quit) : ').title()
+        answer = input(f'\nEnter animal name (or "q" to quit) : ').title()
         if answer == 'q' or answer == 'Q':
             write_converted_csv('BrainBodyWeightPounds.csv', names, body_weights, brain_weights)
             break
@@ -137,11 +137,12 @@ def main():
                     # names.append(answer)
                     # names.sort()
                     position = find_insert_position(answer, names)
-                    body_weights = body_weights.insert(position, input(f'Enter body weight for "{answer}" in kilograms: '))
-                    brain_weights = brain_weights.insert(position, input(f'Enter brain weight for "{answer}" in grams: '))
+                    names.insert(position, answer)
+                    body_weights.insert(position, float(input(f'Enter body weight for "{answer}" in kilograms: ')))
+                    brain_weights.insert(position, float(input(f'Enter brain weight for "{answer}" in grams: ')))
             elif answer in names:
                 index = find_insert_position(answer, names)
-                print(f"{answer}: body = {body_weights[index]}, {brain_weights[index]}")
+                print(f"{answer}: body = {body_weights[index]}, brain = {brain_weights[index]}")
                 del_or_not = input(f'Delete "{answer}"? (y|n) ')
                 if del_or_not == 'y' or del_or_not == 'Y':
                     del names[index]
