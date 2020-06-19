@@ -27,8 +27,30 @@ def load_twitter_dicts_from_file(filename, emoticons_to_ids, ids_to_emoticons):
         else:
             ids_to_emoticons[userID].append(emoticon)
     # print(ids_to_emoticons)
+"""
+1.
+"""
+
+def find_most_common(dict_name):
+    max_length = -1
+    result_emo = ""
+    for key, val in dict_name.items():
+        # length.append(len(val))
+        # print(key, max(length))
+        # print(key, val)
+        if len(val) > max_length:
+            max_length = len(val)
+            result_emo = key
+    print(f'{result_emo.ljust(21)}occurs{str(max_length).rjust(9)} times')
+    return result_emo
+
+
+
+
+
 def main():
     load_twitter_dicts_from_file("twitter_emoticons.dat", {}, {})
-
+    dct = {'a': [1, 2, 3], 'b': [1, 2, 3, 4], 'c': [1, 2, 3, 4, 5], 'd':[1,2]}
+    find_most_common(dct)
 if __name__ == '__main__':
     main()
