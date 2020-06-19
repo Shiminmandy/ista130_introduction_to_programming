@@ -28,7 +28,15 @@ def load_twitter_dicts_from_file(filename, emoticons_to_ids, ids_to_emoticons):
             ids_to_emoticons[userID].append(emoticon)
     # print(ids_to_emoticons)
 """
-1.
+    设定最小值为-1，（list长度不可能小于-1），取变量名为max_length,设定最后的结果表情名字为""
+    , 取变量名字为result_emo
+    
+    循环字典的key和value：
+        如果value的长度大于max_length：
+            那么max_length = value的长度
+            并且，这个key赋值给result_emo
+        (没有否则)
+    打印
 """
 
 def find_most_common(dict_name):
