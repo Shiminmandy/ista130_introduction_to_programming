@@ -27,6 +27,7 @@ def load_twitter_dicts_from_file(filename, emoticons_to_ids, ids_to_emoticons):
         else:
             ids_to_emoticons[userID].append(emoticon)
     # print(ids_to_emoticons)
+    openfile.close()
 """
     设定最小值为-1，（list长度不可能小于-1），取变量名为max_length,设定最后的结果表情名字为""
     , 取变量名字为result_emo
@@ -57,8 +58,20 @@ def find_most_common(dict_name):
 
 
 def main():
-    load_twitter_dicts_from_file("twitter_emoticons.dat", {}, {})
-    dct = {'a': [1, 2, 3], 'b': [1, 2, 3, 4], 'c': [1, 2, 3, 4, 5], 'd':[1,2]}
-    find_most_common(dct)
+    emoticons_to_ids = {}
+    ids_to_emoticons = {}
+    load_twitter_dicts_from_file("twitter_emoticons.dat", emoticons_to_ids, ids_to_emoticons)
+    # dct = {'a': [1, 2, 3], 'b': [1, 2, 3, 4], 'c': [1, 2, 3, 4, 5], 'd':[1,2]}
+    print(f"Emoticons: {len(emoticons_to_ids.keys())}")
+    print(f"UserIDs:   {len(ids_to_emoticons.keys())}")
+
+    for i in range(5):
+        result_emo = find_most_common(emoticons_to_ids)
+        # find_most_common(emoticons_to_ids)
+        emoticons_to_ids.pop(result_emo)
+
+
+
+
 if __name__ == '__main__':
     main()
