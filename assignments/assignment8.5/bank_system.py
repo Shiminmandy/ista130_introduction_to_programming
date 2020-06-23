@@ -27,6 +27,11 @@ class BankCustomer:
             mappings in the dictionary!
             Your total instance variable should be initialized to 0.
         '''
+        self.name = name
+        self.id_num = id_num
+        self.transaction_history = {'Deposits': [], 'Withdrawals': []}
+        self.balance = 0
+
 
 
     def __repr__(self):
@@ -60,6 +65,11 @@ class BankCustomer:
         deposits_log = ""
 
         # Your code starts here:
+        for withdrawals in self.transaction_history['Withdrawals']:
+            withdrawals_log += '\n' + str(withdrawals)
+        for deposits in self.transaction_history['Deposits']:
+            deposits_log += '\n' +str(deposits)
+        self.balance = sum(self.transaction_history['Deposits']) - sum(self.transaction_history['Withdrawals'])
 
         # Your code ends here.
 
@@ -79,7 +89,7 @@ class BankCustomer:
          Your task is to return the customer's identification number.
         '''
 
-
+        return self.id_num
     def deposit(self, amount):
         '''
         TODO:
@@ -88,8 +98,8 @@ class BankCustomer:
          Your task is to append to the list that is mapped to the key "Deposits"
          and adjust the total instance variable accordingly.
         '''
-
-
+        self.transaction_history['Deposits'].append(amount)
+        self.balance += self.balance
 
     def withdrawal(self, amount):
         '''
@@ -99,8 +109,8 @@ class BankCustomer:
             Your task is to append to the list that is mapped to the key
             "Withdrawals" and adjust the total instance variable accordingly.
         '''
-
-
+        self.transaction_history['Withdrawals'].append(amount)
+        self.balance += self.balance
 ###RegEx:
 
 def get_numbers(file: str) -> List[str]:
@@ -148,7 +158,13 @@ def main():
     filename = "iwalktheline3.text"
 
     # Your code starts here:
-
+    customer = BankCustomer('Mandy', 10086)
+    customer.deposit(500)
+    customer.deposit(200)
+    customer.withdrawal(150)
+    customer.deposit(40)
+    customer.withdrawal(56)
+    print(customer)
     '''
     EXAMPLE CODE: 
     
