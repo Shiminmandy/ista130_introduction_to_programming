@@ -54,3 +54,28 @@ def combat_round(InstanceFighter1, InstanceFighter2):
         InstanceFighter2.attack(InstanceFighter1)
         if InstanceFighter1.is_alive():
             InstanceFighter1.attack(InstanceFighter2)
+
+
+def main():
+    InstanceFighter1 = Fighter('Death_Mongrel')
+    InstanceFighter2 = Fighter('Hurt_then_Pain')
+    round_num = 1
+    while InstanceFighter2.hit_points > 0 and InstanceFighter1.hit_points > 0:
+        print(f'{"=" * 19} ROUND {round_num} {"=" * 19}')
+        print(InstanceFighter1.__repr__())
+        print(InstanceFighter2.__repr__())
+        answer = ''
+        while True:
+            if answer == '':
+                answer = input('Enter to Fight! ')
+                break
+            else:
+                answer = input('Enter to Fight! ')
+        combat_round(InstanceFighter1, InstanceFighter2)
+        round_num += 1
+    print('The battle is over!')
+    print(InstanceFighter1.__repr__())
+    print(InstanceFighter2.__repr__())
+
+if __name__ == '__main__':
+    main()
