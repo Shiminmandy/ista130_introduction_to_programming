@@ -37,3 +37,20 @@ class Fighter:
             return True
         else:
             return False
+
+
+def combat_round(InstanceFighter1, InstanceFighter2):
+    num1 = random.randrange(1, 6)
+    num2 = random.randrange(1, 6)
+    if num1 == num2:
+        print('Simultaneous!')
+        InstanceFighter1.attack(InstanceFighter2)
+        InstanceFighter2.attack(InstanceFighter1)
+    elif num1 > num2:
+        InstanceFighter1.attack(InstanceFighter2)
+        if InstanceFighter2.is_alive():
+            InstanceFighter2.attack(InstanceFighter1)
+    else:
+        InstanceFighter2.attack(InstanceFighter1)
+        if InstanceFighter1.is_alive():
+            InstanceFighter1.attack(InstanceFighter2)
