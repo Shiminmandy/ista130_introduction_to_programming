@@ -4,6 +4,8 @@
 # @Copyright
 # @Version:0.0.1
 import random
+
+
 class Fighter:
     def __init__(self, name):
         self.name = name
@@ -29,3 +31,9 @@ class Fighter:
             other.take_damage(hits)
         else:
             print('\tMisses!')
+
+    def is_alive(self):
+        if self.hit_points > 0:
+            return True
+        else:
+            return False
