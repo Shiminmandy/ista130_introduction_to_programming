@@ -62,20 +62,20 @@ def main():
     round_num = 1
     while InstanceFighter2.hit_points > 0 and InstanceFighter1.hit_points > 0:
         print(f'{"=" * 19} ROUND {round_num} {"=" * 19}')
-        print(InstanceFighter1.__repr__())
-        print(InstanceFighter2.__repr__())
-        answer = ''
-        while True:
-            if answer == '':
-                answer = input('Enter to Fight! ')
-                break
-            else:
-                answer = input('Enter to Fight! ')
+        print(InstanceFighter1)
+        print(InstanceFighter2)
+        #answer = ''
+        #while True:
+        #if answer == '':
+        input('Enter to Fight! ')
+            #break
+        # else:
+        #     answer = input('Enter to Fight! ')
         combat_round(InstanceFighter1, InstanceFighter2)
         round_num += 1
     print('The battle is over!')
-    print(InstanceFighter1.__repr__())
-    print(InstanceFighter2.__repr__())
+    print(InstanceFighter1)
+    print(InstanceFighter2)
 
 if __name__ == '__main__':
     main()
